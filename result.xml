@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.17.1"/>
+    <errors>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="assets/sample_code.c" line="1" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="assets/sample_code.c" line="2" column="0"/>
+        </error>
+        <error id="arrayIndexOutOfBounds" severity="error" msg="Array &apos;ptr[5]&apos; accessed at index 5, which is out of bounds." verbose="Array &apos;ptr[5]&apos; accessed at index 5, which is out of bounds." cwe="788" file0="assets/sample_code.c">
+            <location file="assets/sample_code.c" line="17" column="8" info="Array index out of bounds"/>
+        </error>
+        <error id="invalidPrintfArgType_sint" severity="warning" msg="%ld in format string (no. 1) requires &apos;long&apos; but the argument type is &apos;signed int&apos;." verbose="%ld in format string (no. 1) requires &apos;long&apos; but the argument type is &apos;signed int&apos;." cwe="686" file0="assets/sample_code.c">
+            <location file="assets/sample_code.c" line="28" column="5"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: ptr" verbose="Memory leak: ptr" cwe="401" file0="assets/sample_code.c">
+            <location file="assets/sample_code.c" line="35" column="5"/>
+            <symbol>ptr</symbol>
+        </error>
+        <error id="zerodiv" severity="error" msg="Division by zero." verbose="Division by zero." cwe="369" file0="assets/sample_code.c">
+            <location file="assets/sample_code.c" line="24" column="22" info="Division by zero"/>
+            <location file="assets/sample_code.c" line="23" column="24" info="Assignment &apos;zero_divisor=0&apos;, assigned value is 0"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;unused_value&apos; is assigned a value that is never used." verbose="Variable &apos;unused_value&apos; is assigned a value that is never used." cwe="563" file0="assets/sample_code.c">
+            <location file="assets/sample_code.c" line="20" column="22"/>
+            <symbol>unused_value</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;total&apos; is assigned a value that is never used." verbose="Variable &apos;total&apos; is assigned a value that is never used." cwe="563" file0="assets/sample_code.c">
+            <location file="assets/sample_code.c" line="31" column="15"/>
+            <symbol>total</symbol>
+        </error>
+        <error id="staticFunction" severity="style" msg="The function &apos;calculate_sum&apos; should have static linkage since it is not used outside of its translation unit." verbose="The function &apos;calculate_sum&apos; should have static linkage since it is not used outside of its translation unit.">
+            <location file="assets/sample_code.c" line="40" column="0"/>
+            <symbol>calculate_sum</symbol>
+        </error>
+        <error id="checkersReport" severity="information" msg="Active checkers: 109/856 (use --checkers-report=&lt;filename&gt; to see details)" verbose="Active checkers: 109/856 (use --checkers-report=&lt;filename&gt; to see details)"/>
+    </errors>
+</results>
